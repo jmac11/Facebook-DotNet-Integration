@@ -1,0 +1,48 @@
+﻿@{
+    ViewBag.Title = "";
+}
+@section featured {
+    <section class="featured">
+        <div class="content-wrapper">
+            <hgroup class="title">
+                <h1>@ViewBag.Title</h1>
+                
+            </hgroup>
+            <p>
+                Welcome to the nPower site.
+            </p>
+        </div>
+    </section>
+}
+
+
+
+
+@{
+    
+    System.Collections.ArrayList Flist = (System.Collections.ArrayList) ViewData["FBFriends"];
+    
+    
+    if ( Flist != null )
+    {
+        
+        <h4>We see that your interests are in : </h4> 
+    
+         int count = Flist.Count;
+
+        for (int i = 0; i < count; i++)
+        {
+            dynamic f = Flist[i];
+
+            string f2 = f.Name + "<br>";
+        
+            @Html.Raw(f2)
+
+        }
+        
+         <h3> As a token of appreciation , we would like to ship you a pack of chocloates </h3>
+   
+    }
+
+   
+    }
